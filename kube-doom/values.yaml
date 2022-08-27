@@ -1,0 +1,8 @@
+kubedoom:
+  namespace: kubedoom
+  vncNodePort: 30010
+
+victims:
+  namespace: victims
+  srvNodePort: 30080
+  replicas: 5

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-2048
+  namespace: {{ .Values.victims.namespace | quote }}
+  labels:
+    app: app-2048
+spec:
+  replicas: {{ .Values.victims.replicas }}
+  selector:
+    matchLabels:
+      app: app-2048
+  template:
+    metadata:
+      labels:
+        app: app-2048
+    spec:
+      containers:
+      - name: app
+        image: alexwhen/docker-2048:latest
+        ports:
+        - containerPort: 80
